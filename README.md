@@ -2,10 +2,7 @@
 
 A minimal typing speed test built with vanilla HTML, CSS, and JavaScript.
 
-## ⚠️ Temporary Notice
-The mobile virtual keyboard may not appear due to mobile browser focus restrictions.  
-This is a known issue and will be fixed soon.
-
+	##Live Demo##: https://amal-prakashan.github.io/typing-speed-test/
 
 ## Features
 - WPM, accuracy, errors, time
