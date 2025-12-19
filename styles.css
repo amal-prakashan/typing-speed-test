@@ -529,6 +529,23 @@ body {
     min-width: 15rem;
 }
 
+/*message for use physical keybard */
+.mobile-warning {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: var(--accent);
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 880px) {
+  .mobile-warning {
+    display: block;
+  }
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {

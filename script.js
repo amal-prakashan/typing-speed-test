@@ -75,6 +75,9 @@ const keyboardToggle = document.getElementById('keyboardToggle');
 const newTextBtn = document.getElementById('newTextBtn');
 const settingsBtn = document.getElementById('settingsBtn');
 
+// Start the application
+document.addEventListener('DOMContentLoaded', init);
+
 // Initialize the application
 function init() {
     generateNewText();
@@ -417,8 +420,6 @@ function setupEventListeners() {
     });
 }
 
-// Start the application
-document.addEventListener('DOMContentLoaded', init);
 
 // Update stats every second
 setInterval(() => {
