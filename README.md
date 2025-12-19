@@ -2,7 +2,7 @@
 
 A minimal typing speed test built with vanilla HTML, CSS, and JavaScript.
 
-	##Live Demo##: https://amal-prakashan.github.io/typing-speed-test/
+	Live Demo: https://amal-prakashan.github.io/typing-speed-test/
 
 ## Features
 - WPM, accuracy, errors, time
