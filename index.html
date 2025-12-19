@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSpeed - Typing Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <h1>TypeSpeed</h1>
+            </div>
+            
+            <div class="controls">
+                <button id="keyboardToggle" class="control-btn" title="Toggle keyboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </button>
+                
+                <button id="newTextBtn" class="control-btn" title="New text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23,4 23,10 17,10"/>
+                        <polyline points="1,20 1,14 7,14"/>
+                        <path d="M20.49,9A9,9,0,0,0,5.64,5.64L1,10m22,4L18.36,18.36A9,9,0,0,1,3.51,15"/>
+                    </svg>
+                </button>
+                
+                <button id="settingsBtn" class="control-btn" title="Settings">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4,15a1.65,1.65,0,0,0,.33,1.82l.06.06a2,2,0,0,1,0,2.83,2,2,0,0,1-2.83,0l-.06-.06a1.65,1.65,0,0,0-1.82-.33,1.65,1.65,0,0,0-1,1.51V21a2,2,0,0,1-2,2,2,2,0,0,1-2-2V20.51a1.65,1.65,0,0,0-1-1.51,1.65,1.65,0,0,0-1.82.33l-.06.06a2,2,0,0,1-2.83,0,2,2,0,0,1,0-2.83l.06-.06a1.65,1.65,0,0,0,.33-1.82,1.65,1.65,0,0,0-1.51-1H3a2,2,0,0,1-2-2,2,2,0,0,1,2-2H3.49a1.65,1.65,0,0,0,1.51-1,1.65,1.65,0,0,0-.33-1.82l-.06-.06a2,2,0,0,1,0-2.83,2,2,0,0,1,2.83,0l.06.06a1.65,1.65,0,0,0,1.82.33H9a1.65,1.65,0,0,0,1,1.51V3a2,2,0,0,1,2-2,2,2,0,0,1,2,2V3.49a1.65,1.65,0,0,0,1,1.51,1.65,1.65,0,0,0,1.82-.33l.06-.06a2,2,0,0,1,2.83,0,2,2,0,0,1,0,2.83l-.06.06a1.65,1.65,0,0,0-.33,1.82V9a1.65,1.65,0,0,0,1.51,1H21a2,2,0,0,1,2,2,2,2,0,0,1-2,2H20.51A1.65,1.65,0,0,0,19.4,15Z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        
+
+        <!-- Settings Panel -->
+        <div id="settingsPanel" class="settings-panel hidden">
+            <h3>Settings</h3>
+            <div class="theme-selector">
+                <label>Theme</label>
+                <div class="theme-grid">
+                    <button class="theme-btn active" data-theme="dark">
+                        <div class="theme-preview">
+                            <div class="theme-bg dark-bg"></div>
+                            <div class="theme-colors">
+                                <div class="color-bar accent-dark"></div>
+                                <div class="color-bar correct-dark"></div>
+                                <div class="color-bar incorrect-dark"></div>
+                            </div>
+                        </div>
+                        <span>Dark</span>
+                    </button>
+                    
+                    <button class="theme-btn" data-theme="light">
+                        <div class="theme-preview">
+                            <div class="theme-bg light-bg"></div>
+                            <div class="theme-colors">
+                                <div class="color-bar accent-light"></div>
+                                <div class="color-bar correct-light"></div>
+                                <div class="color-bar incorrect-light"></div>
+                            </div>
+                        </div>
+                        <span>Light</span>
+                    </button>
+                    
+                    <button class="theme-btn" data-theme="retro">
+                        <div class="theme-preview">
+                            <div class="theme-bg retro-bg"></div>
+                            <div class="theme-colors">
+                                <div class="color-bar accent-retro"></div>
+                                <div class="color-bar correct-retro"></div>
+                                <div class="color-bar incorrect-retro"></div>
+                            </div>
+                        </div>
+                        <span>Retro</span>
+                    </button>
+                    
+                    <button class="theme-btn" data-theme="cyberpunk">
+                        <div class="theme-preview">
+                            <div class="theme-bg cyberpunk-bg"></div>
+                            <div class="theme-colors">
+                                <div class="color-bar accent-cyberpunk"></div>
+                                <div class="color-bar correct-cyberpunk"></div>
+                                <div class="color-bar incorrect-cyberpunk"></div>
+                            </div>
+                        </div>
+                        <span>Cyberpunk</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="typing-mode">
+                <label>Typing Mode</label>
+                <div class="mode-buttons">
+                    <button class="mode-btn" onclick="lefthandtext()" typing-mode="left">Left Hand</button>
+                    <button class="mode-btn" onclick="righthandtext()" typing-mode="right">Right Hand</button>
+                    <button class="mode-btn" onclick="generateNewText()" typing-mode="normal">Both Hand</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                    </svg>
+                    <div>
+                        <p class="stat-label">WPM</p>
+                        <p class="stat-value" id="wpmValue">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                    <div>
+                        <p class="stat-label">Accuracy</p>
+                        <p class="stat-value" id="accuracyValue">100%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <div>
+                        <p class="stat-label">Errors</p>
+                        <p class="stat-value" id="errorsValue">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-content">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                    <div>
+                        <p class="stat-label">Time</p>
+                        <p class="stat-value" id="timeValue">0:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Typing Interface -->
+        <div class="typing-container">
+
+            <div class="word-count-options">
+                <label>Words</label>
+                <button class="word-btn active" data-count="10">10</button>
+                <button class="word-btn" data-count="20">20</button>
+                <button class="word-btn" data-count="30">30</button>
+                <button class="word-btn" data-count="40">40</button>
+            </div>
+
+            <div id="textDisplay" class="text-display"></div>
+            
+            <div id="completionMessage" class="completion-message hidden">
+                <p class="completion-title">🎉 Congratulations! Test completed!</p>
+                <p class="completion-subtitle">Press Escape to restart or generate new text</p>
+            </div>
+            
+            <div class="instructions">
+                <span id="instructionText">Start typing to begin the test</span>
+            </div>
+        </div>
+
+        <!-- Virtual Keyboard -->
+        <div id="virtualKeyboard" class="keyboard-container">
+            <h3>Virtual Keyboard</h3>
+            <div class="keyboard">
+                <!-- Number row -->
+                <div class="keyboard-row">
+                    <div class="key" data-key="`">`</div>
+                    <div class="key" data-key="1">1</div>
+                    <div class="key" data-key="2">2</div>
+                    <div class="key" data-key="3">3</div>
+                    <div class="key" data-key="4">4</div>
+                    <div class="key" data-key="5">5</div>
+                    <div class="key" data-key="6">6</div>
+                    <div class="key" data-key="7">7</div>
+                    <div class="key" data-key="8">8</div>
+                    <div class="key" data-key="9">9</div>
+                    <div class="key" data-key="0">0</div>
+                    <div class="key" data-key="-">-</div>
+                    <div class="key" data-key="=">=</div>
+                    <div class="key key-wide" data-key="-">⌫</div>
+                </div>
+                
+                <!-- Top row -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="Tab">Tab</div>
+                    <div class="key" data-key="q">Q</div>
+                    <div class="key" data-key="w">W</div>
+                    <div class="key" data-key="e">E</div>
+                    <div class="key" data-key="r">R</div>
+                    <div class="key" data-key="t">T</div>
+                    <div class="key" data-key="y">Y</div>
+                    <div class="key" data-key="u">U</div>
+                    <div class="key" data-key="i">I</div>
+                    <div class="key" data-key="o">O</div>
+                    <div class="key" data-key="p">P</div>
+                    <div class="key" data-key="[">[</div>
+                    <div class="key" data-key="]">]</div>
+                    <div class="key" data-key="\">\</div>
+                </div>
+                
+                <!-- Home row -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="CapsLock">Caps</div>
+                    <div class="key" data-key="a">A</div>
+                    <div class="key" data-key="s">S</div>
+                    <div class="key" data-key="d">D</div>
+                    <div class="key" data-key="f">F</div>
+                    <div class="key" data-key="g">G</div>
+                    <div class="key" data-key="h">H</div>
+                    <div class="key" data-key="j">J</div>
+                    <div class="key" data-key="k">K</div>
+                    <div class="key" data-key="l">L</div>
+                    <div class="key" data-key=";">;</div>
+                    <div class="key" data-key="'">'</div>
+                    <div class="key key-wide" data-key="Enter">Enter</div>
+                </div>
+                
+                <!-- Bottom row -->
+                <div class="keyboard-row">
+                    <div class="key key-extra-wide" data-key="Shift">Shift</div>
+                    <div class="key" data-key="z">Z</div>
+                    <div class="key" data-key="x">X</div>
+                    <div class="key" data-key="c">C</div>
+                    <div class="key" data-key="v">V</div>
+                    <div class="key" data-key="b">B</div>
+                    <div class="key" data-key="n">N</div>
+                    <div class="key" data-key="m">M</div>
+                    <div class="key" data-key=",">,</div>
+                    <div class="key" data-key=".">.</div>
+                    <div class="key" data-key="/">/</div>
+                    <div class="key key-extra-wide" data-key="Shift">Shift</div>
+                </div>
+                
+                <!-- Space row -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="Control">Ctrl</div>
+                    <div class="key key-wide" data-key="Alt">Alt</div>
+                    <div class="key key-space" data-key=" ">Space</div>
+                    <div class="key key-wide" data-key="Alt">Alt</div>
+                    <div class="key key-wide" data-key="Control">Ctrl</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
